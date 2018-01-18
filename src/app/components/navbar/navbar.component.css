@@ -10,8 +10,3 @@
   padding-bottom: 0;
   overflow: visible !important;
 }
-@media (min-width: 100px) .navbar-collapse {
-  width: auto;
-  border-top: 0;
-  box-shadow: none;
-}
