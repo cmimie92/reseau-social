@@ -1,0 +1,17 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+@media (min-width: 100px) .container-fluid, .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+@media (min-width: 100px) .navbar-collapse.collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+@media (min-width: 100px) .navbar-collapse {
+  width: auto;
+  border-top: 0;
+  box-shadow: none;
+}

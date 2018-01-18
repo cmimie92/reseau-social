@@ -1,0 +1,16 @@
+div{
+    color:blue;
+ 
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border :1px solid red;
+
+}
+.glyphicon{
+    color: crimson;
+    cursor: pointer;
+    font-size: 20px;
+    display: block;
+    
+}

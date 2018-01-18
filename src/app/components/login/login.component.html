@@ -1,0 +1,20 @@
+<form>
+  <div class="form-group">
+    <label for="username">USERNAME
+      <input required ngModel name="username" #username="ngModel" id="username" type="text" class="form-control">
+      <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+        <div *ngIf="username.errors.required">username is required</div>
+      </div>
+    </label>
+    <div class="form-group">
+      <label for="password">PASSWORD
+        <input id="password" type="text" class="form-control">
+      </label>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+  </div>
+  <div>
+    <a href="inscription">inscription</a>
+  </div>
+
+</form>
