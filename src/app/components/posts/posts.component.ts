@@ -1,33 +1,80 @@
-import {Component, OnInit} from '@angular/core';
-import {Http} from '@angular/http';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { IdentificationService } from '../../services/identification.service';
+
+
 
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent implements OnInit {
-  posts: any[];
+export class PostsComponent implements OnInit  {
+  posts: any [];
+  post1: any;
 
-  constructor(private http: Http) {
-    http
-      .get('https://jsonplaceholder.typicode.com/posts')
-      .subscribe(response => {
-        this.posts = response.json();
-      });
+  constructor(private http:HttpClient, public ident: IdentificationService) { 
+  
+
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    
+    const req = this.http.post('http://localhost:1337/data',{
+      username: this.ident.identifiants.username,
+      password: this.ident.identifiants.password
+      }).subscribe(req =>{
+        console.log('good');
+       
+    
+    this.ident.proprietes=req;
+    console.log("ident",this.ident.identifiants);
+    console.log("propriete", this.ident.proprietes);
+       this.posts=this.ident.proprietes.post;
+        this.posts=this.posts.reverse();
+      }, 
+      error => { console.log('error occured');
+
+     
+    });
+
+  }
+
+
+
 
   createPost(input: HTMLInputElement) {
-    let post = {title: input.value};
-    input.value = '';
+     this.post1 =  input.value;
+     console.log('post1',this.post1);
+    input.value='';
 
-    this.http
-      .post('https://jsonplaceholder.typicode.com/posts', JSON.stringify(post))
-      .subscribe(response => {
-        post['id'] = response.json().id;
-        this.posts.splice(0, 0, post);
+    this.http.post('http://localhost:1337/datapost',{
+      comment: this.post1,     
+      username: this.ident.identifiants.username,
+       password: this.ident.identifiants.password
+      }).subscribe(response =>{
+      console.log(response);
+      //post=response.json();
+     // this.posts.splice(0,0,post)
+        
+      const req = this.http.post('http://localhost:1337/data',{
+        username: this.ident.identifiants.username,
+        password: this.ident.identifiants.password
+        }).subscribe(req =>{
+          console.log('good');
+      
+          this.ident.proprietes=req;
+          console.log("ident",this.ident.identifiants);
+          console.log("propriete", this.ident.proprietes);
+          this.posts=this.ident.proprietes.post;
+
+         this.posts=this.posts.reverse();
+        }, 
+      error => { console.log('error occured');
       });
+
+    })
   }
+
 }

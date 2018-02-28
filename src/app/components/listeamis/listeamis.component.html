@@ -1,8 +1,11 @@
 
-<div >
-  liste amis
-  <span class="glyphicon glyphicon-heart"  ></span>
+
+<div class="contener">
+  amis: {{ident.amis?.length}}
+  <div class="users">
+      <span class="glyphicon glyphicon-user"  ></span><span class="glyphicon glyphicon-user"  ></span><span class="glyphicon glyphicon-user"  ></span>
+       </div>
   <ul class="list-group">
-    <li class="list-group-items" *ngFor="let ami of amis">{{ami.name}}</li>
+    <li class="list-group-items" *ngFor="let ami of listeAmis; let i=index" (dblclick)="visiteProfile(i)">{{i+1}}:{{ami?.firstname}} {{ami?.lastname}} <button (click)="deleteFriends(i)">X</button></li>
   </ul>
 </div>

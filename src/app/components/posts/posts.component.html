@@ -1,9 +1,9 @@
 
-<h1>about you</h1>
+<h3>Exprimez-vous</h3>
 <input (keyup.enter)="createPost(title)" #title type="text" class="form-control">
 <ul class="list-group">
   
-  <li  *ngFor="let post of posts; let i=index">
-    <div *ngIf="i<5">{{post.title}}</div>
+  <li  *ngFor="let post of posts ; let i=index">
+    <div *ngIf="i<5">{{post}}</div>
   </li>
 </ul>

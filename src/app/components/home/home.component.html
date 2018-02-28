@@ -1,1 +1,6 @@
-<p>mettez vos commentaires</p>
+<div class="presentation">
+        <ul>
+        <li *ngFor="let ami of database; let i=index"><div class="contener">
+          <div class="photos"><img [src]='ami.photos' /></div>{{i+1}}:  {{ami.username}}   {{ami.lastname}} <button (click)="suppressionCompte(i)" >suppression compte</button></div></li>
+      </ul>
+      </div>

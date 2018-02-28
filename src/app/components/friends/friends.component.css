@@ -1,0 +1,36 @@
+.amis{
+    min-width:200px;
+    overflow: auto;
+ 
+}
+.profile{
+    width: 100%;
+ 
+    background: rgba(0, 0, 0, 0.1);
+}
+
+
+.content{
+    display:flex;
+    flex-flow: row wrap;
+
+
+
+}
+img{
+    width:200px;
+    height:200px;
+  }
+  li{
+      list-style: none;
+      cursor: pointer;
+  }
+.profile, .amiss{
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+  section{
+      display: flex;
+      align-items: center;
+      width:100%
+  }

@@ -2,17 +2,33 @@
   <div class="container-fluid">
     <div>
       <ul class="nav navbar-nav">
-        <li class="active">
-          <a routerLink="friends">FRIENDS</a>
+        <li class="active" *ngIf="id.toto">
+          <a routerLink="friends">FRIENDS
+            <div class="users">
+            <span class="glyphicon glyphicon-user"  ></span><span class="glyphicon glyphicon-user"  ></span><span class="glyphicon glyphicon-user"  ></span>
+             </div>
+          </a>
+        </li>
+        <li class="active" *ngIf="id.toto">
+          <a routerLink="profile">PROFILE<span class="glyphicon glyphicon-user"  ></span></a>
+        </li>
+        <li class="active" *ngIf="id.toto && id.tutu">
+          <a routerLink="home">ADMIN<span class="glyphicon glyphicon-eye-open"  ></span></a>
+        </li>
+        <li class="active" *ngIf="id.toto">
+            <a routerLink="messages">MESSAGES<span class="glyphicon glyphicon-envelope"  ></span></a>
         </li>
         <li class="active">
-          <a routerLink="profile">PROFILE</a>
+            <a routerLink="search" *ngIf=id.toto>SEARCH<span class="glyphicon glyphicon-search"></span></a>
         </li>
         <li class="active">
-          <a routerLink="home">HOME</a>
+          <a routerLink="login">LOGIN<span class="glyphicon glyphicon-lock"></span></a>
         </li>
         <li class="active">
-          <a routerLink="login">LOGIN</a>
+            <a routerLink="registration">REGISTRATION<span class="glyphicon glyphicon-barcode"></span></a>
+        </li>
+        <li class="active">
+            <a routerLink="apropos">A PROPOS<span class="glyphicon glyphicon-hand-down"></span></a>
         </li>
       </ul>
     </div>

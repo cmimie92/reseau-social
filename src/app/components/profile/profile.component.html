@@ -1,3 +1,4 @@
+<div class="bonjour">bienvenue {{this.id.proprietes?.firstname}}</div>
 <aside>
   <app-photo class="photo"></app-photo>
   <br>
@@ -6,4 +7,15 @@
 
 <section>
   <app-posts class="posts"></app-posts>
+<br>
+  <div>
+    <h3>Commentaires</h3>
+    <ul class="list-group">
+    
+      <li  *ngFor="let comment of commentsUserEnCours ; let i=index">
+        <div *ngIf="i<5">{{i+1}}:{{comment?.commentFirstname}} {{comment?.commentLastname}}:{{comment?.comments}}<button (click)="deleteComment(i)">X</button></div>
+      </li>
+    </ul>
+  </div>
 </section>
+

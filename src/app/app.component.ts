@@ -1,10 +1,16 @@
-import {Component} from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import {LoginComponent} from './components/Login/Login.component'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'r S';
+export class AppComponent implements OnInit {
+  title = 'reseau social';
+
+
+
+  ngOnInit() {  }
+
 }

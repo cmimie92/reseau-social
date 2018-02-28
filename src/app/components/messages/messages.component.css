@@ -1,0 +1,8 @@
+.champs{
+    width: 200px;
+    height: 100px;
+}
+li{
+    list-style: none;
+    border: 1px black solid;
+}

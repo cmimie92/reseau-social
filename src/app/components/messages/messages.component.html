@@ -1,0 +1,12 @@
+<div>
+    <h5>message à : {{ident.profileDetailsMessage?.firstname}} {{ident.profileDetailsMessage?.lastname}}</h5>
+<input type="text " class="champs" maxlength="200" (keyup.enter)="createMessage(message)" #message>
+</div>
+<div>
+    <h4>mes messages reçu:</h4>
+    <ul class="list-group">
+        <li  *ngFor="let mess of tousMessages ; let i=index">
+            <div *ngIf="i<5">{{mess?.messageFirstname}} {{mess?.messageLastname}}: {{mess?.messagerie}}</div>
+        </li>
+    </ul>
+</div>

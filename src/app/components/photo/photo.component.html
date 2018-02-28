@@ -1,1 +1,3 @@
-<div class="photo">photo <input type="file" ></div>
+<div class="photo"><img [src]='imageUrl' /> </div>
+<h5>changer d'image:</h5>
+<input type="text" (keyup.enter)="uploadPhoto(photo)" #photo>

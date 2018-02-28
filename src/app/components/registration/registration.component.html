@@ -1,0 +1,42 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <div class="form-group">
+    <label for="username">USERNAME
+      <input required ngModel name="username" #username="ngModel" id="username" type="text" class="form-control">
+      <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+        <div *ngIf="username.errors.required">username is required</div>
+      </div>
+    </label>
+    <div class="form-group">
+    <label for="firstname">FIRST NAME
+      <input required ngModel name="firstname" #firstname="ngModel" id="firstname" type="text" class="form-control">
+      <div *ngIf="firstname.touched && firstname.invalid" class="alert alert-danger">
+        <div *ngIf="firstname.errors.required">firstname is required</div>
+      </div>
+    </label>
+    <label for="lastname">LAST NAME
+      <input required ngModel name="lastname" #lastname="ngModel" id="lastname" type="text" class="form-control">
+      <div *ngIf="lastname.touched && lastname.invalid" class="alert alert-danger">
+        <div *ngIf="lastname.errors.required">lastname is required</div>
+      </div>
+    </label>
+    <label for="email">EMAIL ADRESS
+      <input required ngModel name="email" #email="ngModel" id="email" type="email" class="form-control">
+      <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+        <div *ngIf="email.errors.required">email is required</div>
+      </div>
+    </label>
+   </div>
+    <div class="form-group">
+      <label for="password">PASSWORD
+        <input required ngModel name="password" #password="ngModel"id="password" type="password" class="form-control">
+        <div *ngIf="password.touched && password.invalid" class="alert alert-danger">password is required</div>
+      </label>
+    </div>
+    <div class="form-group">
+        <label for="photo">PHOTO (url internet)
+          <input required ngModel name="photo" #photo="ngModel"id="photo" type="text" class="form-control">
+        </label>
+      </div>
+    <button *ngIf="password.valid && email.valid && firstname.valid && photo.valid" class="btn btn-primary" type="submit">Registration</button>
+  </div>
+</form>

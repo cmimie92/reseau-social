@@ -1,12 +1,29 @@
-@import '~bootstrap/dist/css/bootstrap.css';
+.active>a:hover{
+background-color: #81DAF5;
 
-@media (min-width: 100px) .container-fluid, .navbar-collapse {
-  margin-right: 0;
-  margin-left: 0;
 }
-@media (min-width: 100px) .navbar-collapse.collapse {
-  display: block !important;
-  height: auto !important;
-  padding-bottom: 0;
-  overflow: visible !important;
+
+.active>a{
+    background-color: #2ECCFA;
+    
+    }
+
+.navbar-default{
+    background-color : #A9E2F3;
+}
+li{
+    border: 1px #A9E2F3 solid;
+    font-size: 10px;
+}
+.glyphicon{
+    color: #0404B4;
+    cursor: pointer;
+    font-size: 20px;
+    display: block;
+    
+}
+.users{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
 }

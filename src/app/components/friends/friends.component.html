@@ -1,3 +1,38 @@
-<p>
-  <app-listeamis></app-listeamis>
-</p>
+
+<div class="content">
+<div class="amis">
+    <ul class="list-group">
+        <li class="list-group-items" *ngFor="let poto of amisUsers; let i=index" (click)="switchFriend(i)">{{i+1}} {{poto.firstname}} {{poto.lastname}} </li>
+      </ul>
+</div>
+<section>
+
+<div class="profile">
+  <button (click)="sendMessage(profileDetails)">send a private message</button>
+  <h3>{{profileDetails?.firstname}} {{profileDetails?.lastname}}</h3>
+  <div class="photo"><img img [src]='profileDetails.photos'/></div>
+  
+  <div>
+  <h3>comment</h3>
+  <div><input type="text" #comment (keyup.enter)=createComment(comment)></div>
+  <ul class="list-group">
+  
+    <li  *ngFor="let comment of allCommentairesAmis ; let i=index">
+      <div *ngIf="i<5">{{comment?.commentFirstname}} {{comment?.commentLastname}}:{{comment?.comments}}</div>
+    </li>
+  </ul>
+</div>
+
+
+  <div class="amiss"><h3>amis :</h3>
+    <ul class="list-group">
+      <li class="list-group-items" *ngFor="let ami of lesAmisDeLami"> {{ami?.firstname}} {{ami?.lastname}} </li>
+    </ul>
+  </div>
+
+</div>
+
+</section>
+</div>
+
+
